@@ -1,0 +1,27 @@
+<!-- Google Maps -->
+<script src="https://maps.google.com/maps/api/js?key=<?php echo GMAPS_APIKEY ?>"></script>
+<script src="js/jquery.gmaps.min.js"></script>
+<script type="text/javascript">
+	(function ($) {
+		$(document).ready(function () {
+
+			$('#googlemaps').gMap({
+				maptype: 'ROADMAP',
+				scrollwheel: false,
+				zoom: 16,
+				markers: [
+					{
+						address: "Servizi Protezione Ambiente S.r.l. Roma", // Your Adress Here
+						html: '<strong>La nostra sede</strong><br>Via del Cappellaccio, 132 </br>00144 ROMA 	 ',
+						popup: false,
+						icon: {
+							image: "images/marker.png",
+							iconsize: [28, 40],
+							iconanchor: [20, 40]
+						}
+					}
+				]
+			});
+		});
+	})(this.jQuery);
+</script>

@@ -3,7 +3,7 @@
 	require_once ('config.php') ;
 	$page = (isset($_GET['page'])) ? $_GET['page'] : "home";
 	
-	$home_class=$azienda_class=$contatti_class=$servizi_class="";
+	$home_class=$azienda_class=$contatti_class=$servizi_class=$rottamazione_class=$ricambi_class=$soccorso_class="";
 	$servizi_class=' class="dropdown"';
 	
 	switch ($page) {
@@ -16,9 +16,18 @@
 			break;
 			
 		case "rottamazione":
-		case "ricambi-usati":
+			$servizi_class=' class="dropdown active"';
+			$rottamazione_class=' class="active"';
+			break;
+		
+		case "ricambi-usati":	
+			$servizi_class=' class="dropdown active"';
+			$ricambi_class=' class="active"';
+			break;
+		
 		case "soccorso-stradale":
 			$servizi_class=' class="dropdown active"';
+			$soccorso_class=' class="active"';
 			break;
 			
 		case "ricambi-online":
@@ -43,4 +52,6 @@
         <?php include 'html/common/navbar.html' ?>
         <?php include 'html/'.$page.'.html' ?>
         <?php include 'html/common/footer.html' ?>
+        <?php include 'html/common/scripts.html' ?>
+        <?php if ($page=="contatti") include 'html/common/gmaps.html' ?>
         <?php include 'html/common/close.html' ?>
