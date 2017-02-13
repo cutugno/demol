@@ -1,11 +1,19 @@
 
+#navbar {
+	background: #fff
+}
 
 .navbar.sticky {
 	height:90px !important
+
 }
 
-
-.navbar.sticky_mod {
-	height:70px !important
+@media (max-width: 450px) {
+  #navbar {
+	margin-top:40px
+  }
+  .navbar.sticky {
+    height:140px !important
+  }
 }
 
