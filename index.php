@@ -53,5 +53,13 @@
         <?php include 'html/'.$page.'.html' ?>
         <?php include 'html/common/footer.html' ?>
         <?php include 'html/common/scripts.html' ?>
-        <?php if ($page=="contatti") include 'html/common/gmaps.html' ?>
+        <?php 
+			if ($page=="contatti") {
+				include 'html/common/gmaps.html';
+				include 'html/scripts/contatti.js';
+			}
+			if ($page=="ricambi-online") {
+				include 'html/scripts/ricambi-online.js';
+			}
+		?>
         <?php include 'html/common/close.html' ?>

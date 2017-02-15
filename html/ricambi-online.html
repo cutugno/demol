@@ -1,2 +1,88 @@
 <div class="clearfix"></div>
-<div class="container" style="height:400px"></div>
+ <!--page title-->
+<div class="dzsparallaxer auto-init" data-options='{   direction: "reverse"}' style="height: 300px;">
+
+	<div class="divimage dzsparallaxer--target " style="width: 101%; height: 600px; background-image: url(images/bg-3.jpg)">
+	</div>
+	<div class=" parallax-text center-it page-title">
+		<h2>Ricambi online</h2>
+	</div>
+</div>
+<!--page title-->
+
+<div class="space80"></div>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+		<p>
+			<span class="text_color">Cercate un ricambio per la vostra auto?</span><br />
+			Compilate il form qui di seguito riportato ponendo la massima attenzione a tipo, modello, anno di costruzione, cilindrata, colore dell'autovettura e inviatelo. Provvederemo a effettuare un controllo di magazzino nel modo più rapido possibile e vi contatteremo!
+		</p>
+		</div>
+		<div class="col-sm-8 margin-btm-30">
+			<form method="post" action="#" class="b-contact" id="ricambi_form">
+				<div class="row">
+					<div class="col-sm-12"> 
+						<div class="row">
+							<div class="col-sm-12 margin-btm-20">
+								<input type="text" name="name" class="form-control" placeholder="Nome e Cognome" />
+							</div>
+							<div class="col-sm-12 margin-btm-20">
+								<input type="text" name="email" class="form-control" placeholder="Indirizzo email" />
+							</div>
+							<div class="col-sm-12 margin-btm-20">
+								<select id="maker" name="maker" class="form-control">
+									<option value="">--- Seleziona un costruttore ---</option>
+								</select>		
+							</div>
+							<div class="col-sm-8 margin-btm-20">
+								<select id="model" name="model" class="form-control" disabled="true">
+									<option value="">--- Seleziona un modello ---</option>
+								</select>		
+							</div>
+							<div class="col-sm-4 margin-btm-20">
+								<select id="anno" name="anno" class="form-control" disabled="true">
+									<option value="">--- Anno di costruzione ---</option>
+								</select>		
+							</div>
+							<div class="col-sm-4 margin-btm-20">
+								 <div class="form-group">
+									<div class="input-group">
+									  <input type="text" name="cilindrata" class="form-control" placeholder="Cilindrata">
+									  <div class="input-group-addon">cc.</div>
+									</div>
+								  </div>
+							</div>
+							<div class="col-sm-4 margin-btm-20">
+								<select id="alimentazione" name="alimentazione" class="form-control">
+									<option value="">--- Alimentazione ---</option>
+									<option value="Benzina">Benzina</option>
+									<option value="GPL">GPL</option>
+									<option value="Elettrico">Elettrico</option>
+								</select>
+							</div>
+							<div class="col-sm-4 margin-btm-20">
+								<input type="text" name="colore" class="form-control" placeholder="Colore" />
+							</div>
+							<div class="col-sm-12">
+								<textarea name="note" class="form-control margin-btm-20" rows="5" placeholder="Note"></textarea>                                  
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12 text-center">
+						<div class="data-status animated fadeInDown"></div> <!-- data submit status -->
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<button type="submit" id="submit_contatti" class="btn btn-xl btn-skin margin-b-20">INVIA</button>
+					</div>
+				</div>
+			</form>
+		</div><!--contact col end-->
+	</div>
+</div>
+
+<div class="space80"></div>
