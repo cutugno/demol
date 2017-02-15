@@ -8,8 +8,7 @@ define ('MAIL_PORT', "465");
 define ('MAIL_SMTPSECURE', 'ssl');
 define ('MAIL_USERNAME', "form@autodemolizionediroma.it");
 define ('MAIL_PASSWORD', "2aleare6");
-// define ('MAIL_SPA', "ricambiautodiroma@gmail.com"); 
-define ('MAIL_SPA', "sberz666@gmail.com"); 
+define ('MAIL_SPA', "ricambiautodiroma@gmail.com"); 
     
 extract($_POST); //name, email, maker, model, anno, cilindrata, alimentazione, colore, note
 
