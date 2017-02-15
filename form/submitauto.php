@@ -11,12 +11,12 @@ define ('MAIL_PASSWORD', "2aleare6");
 // define ('MAIL_SPA', "ricambiautodiroma@gmail.com"); 
 define ('MAIL_SPA', "sberz666@gmail.com"); 
     
-extract($_POST); //nome, email, maker, model, anno, cilindrata, alimentazione, colore, note
+extract($_POST); //name, email, maker, model, anno, cilindrata, alimentazione, colore, note
 
 // formattazione mail con due titoli e intestazioni diverse (una per cliente, una per servprot)
 $titolo_cli="Riepilogo Richiesta informazioni ricambio su www.autodemolizionediroma.it";
 $titolo_spa="Richiesta informazioni ricambio";
-$head_cli="Salve, $nome.<br />
+$head_cli="Salve, $name.<br />
 		   Abbiamo ricevuto la sua richiesta di informazioni per la disponibilit&agrave; di un pezzo di ricambio.<br />
 		   Di seguito il riepilogo della Sua richiesta:<br /><br />
 ";
@@ -37,6 +37,7 @@ if (!empty($note)) $body.="<strong>Note: </strong>$note<br />";
 
 $footer_cli="Grazie per averci contattato. Provvederemo alla verifica della disponibilità del ricambio da Lei richiesto e le risponderemo il più presto possibile.";
 $footer_spa="<strong>Richiesta effettuata il: </strong>".date("d-m-Y, H:i:s");
+$footer_class="bg-success";
 
 // invio mail a cliente
 $mail = new PHPMailer;
@@ -75,16 +76,21 @@ try {
 
 	$mail->Subject = $titolo_spa;
 	$mail->Body    = $head_spa.$body_spa.$body.$footer_spa;
-	if (!$mail->send()) $footer_cli="Mail non inviata"; 
+	if (!$mail->send()) {
+		$footer_cli="Mail non inviata"; 
+		$footer_class="bg-danger";
+	}
 	$out=$footer_cli;
 } catch (phpmailerException $e) {
 	$out=$e->errorMessage(); //Pretty error messages from PHPMailer
+	$footer_class="bg-danger";
 } catch (Exception $e) {
 	$out=$e->getMessage(); //Boring error messages from anything else!
+	$footer_class="bg-danger";
 }
 
 // echo messaggio di alert
-$output=array("mess"=>$out);
+$output=array("mess"=>$out,"class"=>$footer_class);
 echo json_encode($output);
 
 

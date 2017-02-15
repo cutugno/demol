@@ -69,7 +69,8 @@
 					     regex: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ 
 					   },
 				maker: { required: true },
-				model: { required: true }
+				model: { required: true },
+				cilindrata: { number: true }
 			},
 			messages: {
 				name: { required: "Nome obbligatorio" },
@@ -77,17 +78,23 @@
 						 regex: "Per favore inserisci un'email valida" 
 					   },
 				maker: { required: "Costruttore obbligatorio" },
-				model: { required: "Modello obbligatorio" }
+				model: { required: "Modello obbligatorio" },
+				cilindrata: { number: "La cilindrata deve essere numerica" }
 			},
 			errorPlacement: function(label, element) {
 				label.addClass('text-danger');
-				label.insertAfter(element);
+				if (element.attr("name") == "cilindrata") {
+					label.insertAfter("#cilindrata_group")
+				}else{
+					label.insertAfter(element);
+				}
 			},
 			submitHandler: function() {
 				var dati=$("#ricambi_form").serialize();
 				$.post("<?php echo BASE_URL ?>/form/submitauto.php",dati,function(resp) {
 					var out=jQuery.parseJSON(resp);
-					alert(out.mess);
+					$("#message").removeClass().addClass(out.class).html(out.mess).show();
+					$("#ricambi_form input,#ricambi_form select,#ricambi_form textarea").val("");
 				});
 			}
 		});
