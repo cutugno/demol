@@ -22,7 +22,6 @@
 		
 		case "ricambi-usati":	
 			$servizi_class=' class="dropdown active"';
-			$ricambi_class=' class="active"';
 			break;
 		
 		case "soccorso-stradale":
