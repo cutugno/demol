@@ -8,6 +8,11 @@
 
 }
 
+.top-bar .list-inline li a:hover {
+	background: transparent !important;
+	color: #fff;
+}
+
 @media (max-width: 450px) {
   #navbar {
 	margin-top:40px
