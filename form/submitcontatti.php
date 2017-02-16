@@ -13,28 +13,21 @@ define ('MAIL_SPA', "ricambiautodiroma@gmail.com");
 extract($_POST); //name, email, maker, model, anno, cilindrata, alimentazione, colore, note
 
 // formattazione mail con due titoli e intestazioni diverse (una per cliente, una per servprot)
-$titolo_cli="Riepilogo Richiesta informazioni ricambio su www.autodemolizionediroma.it";
-$titolo_spa="Richiesta informazioni ricambio";
+$titolo_cli="Riepilogo Richiesta contatto su www.autodemolizionediroma.it";
+$titolo_spa="Richiesta contatto";
 $head_cli="Salve, $name.<br />
-		   Abbiamo ricevuto la sua richiesta di informazioni per la disponibilit&agrave; di un pezzo di ricambio.<br />
+		   Abbiamo ricevuto la sua richiesta di contatto.<br />
 		   Di seguito il riepilogo della Sua richiesta:<br /><br />
 ";
-$head_spa="&Egrave; stata effettuata una richiesta di informazioni per la disponibilità di un pezzo di ricambio.<br />
+$head_spa="&Egrave; stata effettuata una richiesta di contatto.<br />
 		   Di seguito i dettagli della richiesta: <br /><br />
 ";
 $body_spa="<strong>Nome: </strong>$name<br />
 		   <strong>Email: </strong>$email<br />
 ";
-$body="<strong>Costruttore: </strong>$maker<br />
-       <strong>Modello: </strong>$model<br />
-";
-if (!empty($anno)) $body.="<strong>Anno: </strong>$anno<br />";
-if (!empty($cilindrata)) $body.="<strong>Cilindrata: </strong>$cilindrata<br />";
-if (!empty($alimentazione)) $body.="<strong>Alimentazione: </strong>$alimentazione<br />";
-if (!empty($colore)) $body.="<strong>Colore: </strong>$colore<br />";
-if (!empty($note)) $body.="<strong>Note: </strong>$note<br />";
+$body="<strong>Messaggio: </strong>$message<br />";
 
-$footer_cli="Grazie per averci contattato. Provvederemo alla verifica della disponibilità del ricambio da Lei richiesto e le risponderemo il più presto possibile.";
+$footer_cli="<br />Grazie per averci contattato. Le risponderemo il più presto possibile.";
 $footer_spa="<strong>Richiesta effettuata il: </strong>".date("d-m-Y, H:i:s");
 $footer_class="bg-success";
 

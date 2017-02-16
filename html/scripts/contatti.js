@@ -28,7 +28,11 @@
 			},
 			submitHandler: function() {
 				var dati=$("#contatti_form").serialize();
-				alert(dati);
+				$.post("<?php echo BASE_URL ?>/form/submitcontatti.php",dati,function(resp) {
+					var out=jQuery.parseJSON(resp);
+					$("#message").removeClass().addClass(out.class).html(out.mess).show();
+					$("#contatti_form input,#contatti_form textarea").val("");
+				});
 			}
 		});
 	});
