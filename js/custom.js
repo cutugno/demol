@@ -51,6 +51,10 @@ $(document).ready(function () {
     //courses carousel
     $(".service-slider").owlCarousel({
         items: 3,
+        responsive: {
+			0:   { items: 1 },
+			600: { items: 3 }
+		},
         lazyLoad: true,
         pagination: false,
         navigation: true,

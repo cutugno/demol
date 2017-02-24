@@ -17,6 +17,13 @@ p {
 	color: #fff;
 }
 
+.service-slider .owl-item {
+	margin-left:10px !important;
+}
+.service-slider .owl-item:first-child {
+	margin-left:0 !important;
+}
+
 @media (max-width: 450px) {
   #navbar {
 	margin-top:40px
