@@ -1,20 +1,14 @@
 <?php	
 	
-	require_once ("include/DB.class.php");
+    require_once ("include/DB.class.php");
 
-	/*
+	
 	define('DB_HOST', "62.149.150.249"); 
 	define('DB_NAME', "Sql921165_1");
-    define('DB_PORT', "3306"); 
-    define('DB_USER', "Sql921165"); 
-    define('DB_PASS', "z8ye1dkwnt");
-    */
-    
-    define('DB_HOST', "localhost"); 
-	define('DB_NAME', "auto");
-    define('DB_PORT', "3306"); 
-    define('DB_USER', "root"); 
-    define('DB_PASS', "Aleare26"); 
+    	define('DB_PORT', "3306"); 
+        define('DB_USER', "Sql921165"); 
+   	define('DB_PASS', "z8ye1dkwnt");
+ 
     $DB = DB::Open();
     
     isset($_GET['s']) ? $s=$_GET['s'] : exit(); 
